@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Công Nghệ & Ngôn Ngữ Lập Trình Cho Dự Án (Tương Tác)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+            color: #1f2937; /* Tailwind gray-800 */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem; /* Tailwind rounded-xl */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        h1 {
+            font-size: 2.5rem; /* Tailwind text-4xl */
+            font-weight: 800;
+            color: #1e3a8a; /* Tailwind blue-800 */
+            text-align: center;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.025em;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 0.75rem; /* Tailwind rounded-xl */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        th, td {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb; /* Tailwind gray-200 */
+        }
+        th {
+            background-color: #374151; /* Tailwind gray-700 */
+            color: #f9fafb; /* Tailwind gray-50 */
+            font-weight: 600; /* Tailwind font-semibold */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem; /* Tailwind text-sm */
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb; /* Tailwind gray-50 */
+        }
+        tr:hover {
+            background-color: #f0f9ff; /* Tailwind sky-50 */
+        }
+        .category-title {
+            font-size: 1.125rem; /* Tailwind text-lg */
+            font-weight: 700; /* Tailwind font-bold */
+            color: #312e81; /* Tailwind indigo-800 */
+            background-color: #e0e7ff; /* Tailwind indigo-100 */
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            vertical-align: top;
+        }
+        @media screen and (min-width: 769px) {
+            .category-title {
+                border-right: 1px solid #c7d2fe; /* Tailwind indigo-200 */
+            }
+        }
+
+        .technology-badge {
+            display: inline-block;
+            background-color: #e0e7ff; /* Tailwind indigo-100 */
+            color: #3730a3; /* Tailwind indigo-700 */
+            padding: 0.375rem 0.875rem;
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+            font-size: 0.875rem;
+            font-weight: 500; /* Tailwind font-medium */
+            margin: 0.25rem 0.125rem;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+            text-decoration: none; /* Remove underline from links */
+        }
+        .technology-badge:hover {
+            background-color: #c7d2fe; /* Tailwind indigo-200 */
+            color: #312e81; /* Tailwind indigo-800 */
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07);
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+
+        /* Responsive table */
+        @media screen and (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+                border-radius: 0.5rem; /* Tailwind rounded-lg */
+                margin-bottom: 1.25rem;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* Tailwind shadow-md */
+                background-color: white;
+            }
+            tr:nth-child(even) {
+                background-color: white;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #f3f4f6; /* Tailwind gray-100 */
+                position: relative;
+                padding-left: 45%;
+                padding-top: 0.875rem;
+                padding-bottom: 0.875rem;
+                white-space: normal;
+                text-align: left;
+            }
+            td:last-child {
+                border-bottom: none;
+            }
+            td:before {
+                position: absolute;
+                top: 0.875rem;
+                left: 0.875rem;
+                width: 40%;
+                padding-right: 0.75rem;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600; /* Tailwind font-semibold */
+                color: #4b5563; /* Tailwind gray-600 */
+                font-size: 0.875rem;
+            }
+            td:nth-of-type(1):before { content: "Hạng mục"; }
+            td:nth-of-type(2):before { content: "Công nghệ"; }
+            td:nth-of-type(3):before { content: "Mô tả"; }
+            td:nth-of-type(4):before { content: "Ví dụ"; }
+
+            .category-title {
+                background-color: #374151; /* Tailwind gray-700 */
+                color: white;
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem 0.5rem 0 0; /* Bo góc trên */
+                margin: -1px -1px 0 -1px;
+                width: calc(100% + 2px);
+            }
+            .category-title:before {
+                content: "" !important;
+                display: none;
+            }
+            .category-title + td {
+                 padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <h1>Tổng Quan Công Nghệ & Ngôn Ngữ Lập Trình Cho Dự Án</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Hạng mục</th>
+                    <th>Công nghệ / Ngôn ngữ</th>
+                    <th>Mô tả / Ứng dụng chính</th>
+                    <th>Ví dụ / Công cụ phổ biến</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="category-title" rowspan="4">Giao diện Người dùng (Frontend)</td>
+                    <td>HTML, CSS, JavaScript</td>
+                    <td>Nền tảng của web: HTML cho cấu trúc, CSS cho giao diện, JS cho tương tác.</td>
+                    <td>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Tìm hiểu về HTML5">HTML5</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Tìm hiểu về CSS3">CSS3</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Tìm hiểu về JavaScript ES6+">ES6+</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TypeScript</td>
+                    <td>Mở rộng JavaScript với kiểu tĩnh, giúp code an toàn và dễ bảo trì hơn.</td>
+                    <td>
+                        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ TypeScript">TypeScript</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Frameworks/Thư viện JS</td>
+                    <td>Xây dựng giao diện người dùng động và phức tạp một cách hiệu quả.</td>
+                    <td>
+                        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ React">React</a>
+                        <a href="https://angular.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Angular">Angular</a>
+                        <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Vue.js">Vue.js</a>
+                        <a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Svelte">Svelte</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CSS Frameworks/UI Libraries</td>
+                    <td>Cung cấp các thành phần UI và hệ thống lưới dựng sẵn để tăng tốc độ phát triển.</td>
+                    <td>
+                        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Tailwind CSS">Tailwind CSS</a>
+                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Bootstrap">Bootstrap</a>
+                        <a href="https://mui.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Material UI">Material UI</a>
+                        <a href="https://ant.design/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Ant Design">Ant Design</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category-title" rowspan="3">Logic Nghiệp vụ (Backend)</td>
+                    <td>Node.js</td>
+                    <td>Xây dựng ứng dụng mạng nhanh và có khả năng mở rộng bằng JavaScript/TypeScript.</td>
+                    <td>
+                        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Express.js">Express.js</a>
+                        <a href="https://nestjs.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ NestJS">NestJS</a>
+                        <a href="https://koajs.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Koa">Koa</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Phổ biến cho phát triển web, khoa học dữ liệu, AI. Cú pháp rõ ràng, dễ học.</td>
+                    <td>
+                        <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Django">Django</a>
+                        <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Flask">Flask</a>
+                        <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ FastAPI">FastAPI</a>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>Java, C#, PHP, Ruby, Go</td>
+                    <td>Các ngôn ngữ mạnh mẽ khác cho backend với hệ sinh thái và framework đa dạng.</td>
+                    <td>
+                        <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Spring Boot">Spring Boot</a>
+                        <a href="https://dotnet.microsoft.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ .NET">.NET (C#)</a>
+                        <a href="https://laravel.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Laravel">Laravel</a>
+                        <a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Ruby on Rails">Ruby on Rails</a>
+                        <a href="https://gin-gonic.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Gin (Go)">Gin (Go)</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category-title" rowspan="2">Thiết kế Trải nghiệm & Giao diện (UX/UI)</td>
+                    <td>Nguyên tắc Thiết kế</td>
+                    <td>Tập trung vào việc tạo ra sản phẩm dễ sử dụng, hữu ích và mang lại trải nghiệm tốt cho người dùng.</td>
+                    <td>
+                        <a href="https://www.nngroup.com/articles/user-research-basics/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Tìm hiểu về Nghiên cứu người dùng">User Research</a>
+                        <a href="https://www.figma.com/wireframe-tool/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Công cụ Wireframing (Figma)">Wireframing</a>
+                        <a href="https://www.figma.com/prototyping/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Công cụ Prototyping (Figma)">Prototyping</a>
+                        <a href="https://www.usability.gov/how-to-and-tools/methods/usability-testing/index.html" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Tìm hiểu về Kiểm thử khả năng sử dụng">Usability Testing</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Công cụ Thiết kế</td>
+                    <td>Phần mềm hỗ trợ quá trình thiết kế từ ý tưởng đến sản phẩm hoàn chỉnh.</td>
+                    <td>
+                        <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Figma">Figma</a>
+                        <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Sketch">Sketch</a>
+                        <a href="https://www.adobe.com/products/xd.html" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Adobe XD">Adobe XD</a>
+                        <a href="https://www.invisionapp.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ InVision">InVision</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category-title" rowspan="2">Cơ sở dữ liệu (Database)</td>
+                    <td>CSDL Quan hệ (SQL)</td>
+                    <td>Lưu trữ dữ liệu có cấu trúc dạng bảng, đảm bảo tính toàn vẹn dữ liệu.</td>
+                    <td>
+                        <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ PostgreSQL">PostgreSQL</a>
+                        <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ MySQL">MySQL</a>
+                        <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ SQL Server">SQL Server</a>
+                        <a href="https://www.oracle.com/database/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Oracle DB">Oracle</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CSDL NoSQL</td>
+                    <td>Lưu trữ dữ liệu phi quan hệ hoặc bán cấu trúc, linh hoạt và dễ mở rộng.</td>
+                    <td>
+                        <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ MongoDB">MongoDB</a>
+                        <a href="https://redis.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Redis">Redis</a>
+                        <a href="https://cassandra.apache.org/_/index.html" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Cassandra">Cassandra</a>
+                        <a href="https://www.elastic.co/elasticsearch/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Elasticsearch">Elasticsearch</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="category-title" rowspan="4">Trí Tuệ Nhân Tạo & Học Máy (AI/ML)</td>
+                    <td>Ngôn ngữ & Thư viện chính</td>
+                    <td>Nền tảng cho các mô hình học máy, học sâu và phân tích dữ liệu.</td>
+                    <td>
+                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Python">Python</a>
+                        <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ TensorFlow">TensorFlow</a>
+                        <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ PyTorch">PyTorch</a>
+                        <a href="https://scikit-learn.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Scikit-learn">Scikit-learn</a>
+                        <a href="https://keras.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Keras">Keras</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Xử lý dữ liệu & Tính toán</td>
+                    <td>Công cụ thiết yếu cho việc chuẩn bị, làm sạch, biến đổi và tính toán trên dữ liệu lớn.</td>
+                    <td>
+                        <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Pandas">Pandas</a>
+                        <a href="https://numpy.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ NumPy">NumPy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lĩnh vực chuyên sâu</td>
+                    <td>Thư viện chuyên dụng cho thị giác máy tính, xử lý ngôn ngữ tự nhiên và các mô hình AI tiên tiến.</td>
+                    <td>
+                        <a href="https://opencv.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ OpenCV">OpenCV</a>
+                        <a href="https://www.nltk.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ NLTK">NLTK</a>
+                        <a href="https://spacy.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Spacy">Spacy</a>
+                        <a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Hugging Face Transformers">Hugging Face</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Môi trường & Công cụ Phát triển</td>
+                    <td>Nền tảng tương tác để thử nghiệm, trực quan hóa mã và chia sẻ kết quả trong các dự án AI/ML.</td>
+                    <td>
+                        <a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Jupyter">Jupyter</a>
+                        <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Google Colab">Google Colab</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category-title">Ví dụ Stack Hiện Đại: React TS + Vite</td>
+                    <td>React, TypeScript, Vite</td>
+                    <td>Kết hợp thư viện UI mạnh mẽ, kiểu tĩnh an toàn, và công cụ build siêu nhanh.</td>
+                    <td>
+                        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ React">React</a>
+                        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ TypeScript">TypeScript</a>
+                        <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Vite">Vite</a>
+                        <a href="https://eslint.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ ESLint">ESLint</a>
+                        <a href="https://prettier.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Prettier">Prettier</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category-title" rowspan="2">Phát triển Di động (Mobile)</td>
+                    <td>Native</td>
+                    <td>Xây dựng ứng dụng riêng cho từng nền tảng (iOS, Android) để tối ưu hiệu năng và trải nghiệm.</td>
+                    <td>
+                        <a href="https://developer.apple.com/swift/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Swift">Swift (iOS)</a>
+                        <a href="https://kotlinlang.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Kotlin">Kotlin (Android)</a>
+                        <a href="https://developer.android.com/java" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Java cho Android">Java (Android)</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cross-platform</td>
+                    <td>Viết code một lần và triển khai trên nhiều nền tảng, tiết kiệm thời gian và chi phí.</td>
+                    <td>
+                        <a href="https://reactnative.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ React Native">React Native</a>
+                        <a href="https://flutter.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Flutter">Flutter (Dart)</a>
+                        <a href="https://ionicframework.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Ionic">Ionic</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="category-title" rowspan="4">Vận hành & Triển khai (DevOps)</td>
+                    <td>Quản lý Phiên bản</td>
+                    <td>Theo dõi và quản lý các thay đổi trong mã nguồn.</td>
+                    <td>
+                        <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Git">Git</a>
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ GitHub">GitHub</a>
+                        <a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ GitLab">GitLab</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Containerization & Orchestration</td>
+                    <td>Đóng gói ứng dụng và các phụ thuộc, quản lý và tự động hóa triển khai.</td>
+                    <td>
+                        <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Docker">Docker</a>
+                        <a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Kubernetes">Kubernetes</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CI/CD</td>
+                    <td>Tự động hóa quá trình tích hợp, kiểm thử và triển khai phần mềm.</td>
+                    <td>
+                        <a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer" class="technology-badge" title="GitHub Actions">GitHub Actions</a>
+                        <a href="https://www.jenkins.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Jenkins">Jenkins</a>
+                        <a href="https://docs.gitlab.com/ee/ci/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="GitLab CI/CD">GitLab CI</a>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>Nền tảng Đám mây</td>
+                    <td>Cung cấp hạ tầng, nền tảng và dịch vụ để xây dựng, triển khai và quản lý ứng dụng.</td>
+                    <td>
+                        <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Amazon Web Services">AWS</a>
+                        <a href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Microsoft Azure">Azure</a>
+                        <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Google Cloud Platform">Google Cloud</a>
+                    </td>
+                </tr>
+
+                <tr>
+                     <td class="category-title">Kiểm thử Phần mềm (Testing)</td>
+                     <td>Frameworks & Công cụ</td>
+                     <td>Đảm bảo chất lượng phần mềm thông qua các loại kiểm thử khác nhau (đơn vị, tích hợp, đầu cuối).</td>
+                     <td>
+                        <a href="https://jestjs.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Jest">Jest</a>
+                        <a href="https://www.cypress.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Cypress">Cypress</a>
+                        <a href="https://playwright.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Playwright">Playwright</a>
+                        <a href="https://www.selenium.dev/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Selenium">Selenium</a>
+                        <a href="https://pytest.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ PyTest">PyTest</a>
+                        <a href="https://junit.org/junit5/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ JUnit 5">JUnit</a>
+                     </td>
+                </tr>
+                <tr>
+                     <td class="category-title">Phát triển API</td>
+                     <td>Kiểu & Công cụ</td>
+                     <td>Xây dựng giao diện lập trình ứng dụng để các hệ thống khác nhau có thể giao tiếp.</td>
+                     <td>
+                        <a href="https://restfulapi.net/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Tìm hiểu về RESTful APIs">RESTful APIs</a>
+                        <a href="https://graphql.org/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ GraphQL">GraphQL</a>
+                        <a href="https://grpc.io/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ gRPC">gRPC</a>
+                        <a href="https://www.postman.com/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="Trang chủ Postman">Postman</a>
+                        <a href="https://swagger.io/specification/" target="_blank" rel="noopener noreferrer" class="technology-badge" title="OpenAPI Specification">Swagger/OpenAPI</a>
+                     </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
